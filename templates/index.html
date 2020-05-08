@@ -1,0 +1,173 @@
+{% import "macros.html" as macro %}
+
+<!DOCTYPE html>
+<html lang="{% if page.extra.lang %}{{ page.extra.lang }}{% else %}{{ config.default_language }}{% endif %}" itemscope itemtype="http://schema.org/Blog">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) | safe }}">
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  
+  {% if config.generate_rss %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml") }}">
+  {% endif %}
+
+  <meta name="description" itemprop="about" content="{{ config.description }}">
+  <meta name="keywords" itemprop="keywords" content="{{ config.extra.keywords }}">
+  <meta name="author" itemprop="author" content="{{ config.extra.author }}">
+  <meta itemprop="headline" content="{{ config.title }}">
+  <meta itemprop="copyrightYear" content="{{ config.extra.year }}">
+
+  <link rel="icon" href="{{ get_url(path="images/favicon.ico") }}" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ get_url(path="images/apple-icon-57x57.png") }}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ get_url(path="images/apple-icon-60x60.png") }}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ get_url(path="images/apple-icon-72x72.png") }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ get_url(path="images/apple-icon-76x76.png") }}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ get_url(path="images/apple-icon-114x114.png") }}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ get_url(path="images/apple-icon-120x120.png") }}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ get_url(path="images/apple-icon-144x144.png") }}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ get_url(path="images/apple-icon-152x152.png") }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path="images/apple-icon-180x180.png") }}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{{ get_url(path="images/android-icon-192x192.png") }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path="images/favicon-32x32.png") }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ get_url(path="images/favicon-96x96.png") }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path="images/favicon-16x16.png") }}">
+  <link rel="manifest" href="{{ get_url(path="images/manifest.json") }}">
+  <meta name="msapplication-TileColor" content="{{ config.extra.theme_color }}">
+  <meta name="msapplication-TileImage" content="{{ get_url(path="images/ms-icon-144x144.png") }}">
+  <meta name="theme-color" content="{{ config.extra.theme_color }}">
+
+  <meta property="og:title" content="{% block ogtitle %}{{ config.title }}{% endblock ogtitle %}">
+  <meta property="og:description" content="{% block ogdesc %}{{ config.description }}{% endblock ogdesc %}">
+  <meta property="og:url" content="{% block ogurl %}{{ config.base_url }}{% endblock ogurl%}">
+  <meta property="og:site_name" content="{{ config.title }}">
+  <meta property="og:image" content="{% block ogimg %}{{ config.extra.image }}{% endblock ogimg %}">
+  <meta name="twitter:card" content="summary">
+  {% if config.extra.twitter_user %}
+  <meta name="twitter:site" content="{{ config.extra.twitter_user }}">
+  <meta name="twitter:creator" content="{{ config.extra.twitter_user }}">
+  <meta name="twitter:image:alt" content="{% block ogaltimg %}{{ config.title }}{% endblock ogaltimg %}">
+  {% endif %}
+
+  {% if config.extra.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{config.extra.google_analytics}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{config.extra.google_analytics}}');
+  </script>
+  {% endif %}
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="{{ config.base_url }}">{{ config.title }}</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                {% block navbar %}
+                {% for item in config.extra.zola386_menu %}
+                <li class="{% if item.path == current_path %}active{% endif %}">
+                  <a href="{{ config.base_url }}/{{ item.path }}"><span>{{ item.name }}</span></a>
+                </li>
+                {% endfor %}
+                {% endblock %}
+              </ul>
+            </div>
+        </div>
+    </div>
+  </nav>
+
+  <div class="container navmargin">
+    <header class="jumbotron subhead" id="overview">
+      {% block breadcrumb %}{% endblock breadcrumb %}
+      {% block header %}
+      <div class="page-header">
+        <h1>{{ config.extra.label_welcome}}{{ config.title }}</h1>
+      </div>
+      {% endblock header %}
+      {% block meta %}{% endblock meta %}
+    </header>
+    
+    <div class="row-fluid">
+
+      <div class="span9 bs-docs-sidebar">
+      {% block main %}
+        <p class="lead">{{ config.description }}</p>
+
+        {% for page in paginator.pages %}
+          {{ macro::post_max(page=page) }}
+        {% endfor %}
+
+        {{ macro::paginator(ref=paginator, extra=config.extra) }}
+      {% endblock main %}
+      </div> <!-- span9 -->
+
+      <div class="span3 bs-docs-sidebar">
+      {% block sidebar %}
+        <h1>Categories</h1>
+        <ul class="nav nav-list bs-docs-sidenav">
+          {% set categories = get_taxonomy(kind="categories") %}
+          {% for cat in categories.items %}
+            <li><a href="{{ config.base_url }}/categories/{{ cat.name }}">{{ cat.name }}</a></li>
+          {% endfor %}
+        </ul>
+        <p></p>
+        <h1>Tags</h1>
+        <ul class="nav nav-list bs-docs-sidenav">        
+          {% set tags = get_taxonomy(kind="tags") %}
+          {% for tag in tags.items %}
+            <li><a href="{{ config.base_url }}/tags/{{ tag.name }}">{{ tag.name }}</a></li>
+          {% endfor %}    
+        </ul>
+      {% endblock sidebar %}
+      </div>
+
+    </div> <!-- row -->
+  </div> <!-- container navmargin -->
+
+  <footer class="container">
+    <hr class="soften">
+    <p>
+        {{ config.extra.year }} &copy;
+        <a href="{{ config.base_url }}">{{ config.extra.author }}</a>
+        |
+        {% if config.extra.twitter_user %}
+        <a href="https://twitter.com/{{ config.extra.twitter_user }}" target="_blank">Twitter</a>
+        {% endif %}
+        {% if config.extra.linkedin_user %}
+        <a href="https://linkedin.com/in/{{ config.extra.linkedin_user }}" target="_blank">Linkedin</a>
+        {% endif %}
+        {% if config.extra.github_user %}
+        <a href="https://github.com/{{ config.extra.github_user }}" target="_blank">GitHub</a>
+        {% endif %}
+        {% if config.extra.gitlab_user %}
+        <a href="https://gitlab.com/{{ config.extra.gitlab_user }}" target="_blank">GitLab</a>
+        {% endif %}
+        |
+        Built on <a href="https://getzola.org" target="_blank">Zola</a>
+    </p>
+  </footer>
+
+  <script src="{{ get_url(path="js/jquery.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-386.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-transition.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-alert.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-modal.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-dropdown.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-scrollspy.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-tab.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-tooltip.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-popover.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-button.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-collapse.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-carousel.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-typeahead.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/bootstrap-affix.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/zola.386.js", trailing_slash=false) | safe }}"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}{{ config.title }} - {{ config.extra.label_tags }}{% endblock title %}
+
+{% block header %}
+<div class="page-header">
+  <h1>{{ config.extra.label_tag }}: {{ term.name }}</h1>
+</div>
+{% endblock header %}
+
+{% block main %}
+<ul>
+{% for page in term.pages %}
+  <li>{{ macro::post_min(page=page) }}</li>
+{% endfor %}
+</ul>
+{% endblock main %}

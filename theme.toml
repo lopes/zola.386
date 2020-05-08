@@ -1,0 +1,10 @@
+name = "zola.386"
+description = "Zola port of the BOOTSTRA.386 theme."
+license = "MIT"
+homepage = "https://github.com/lopes/zola.386"
+min_version = "0.1.0"
+demo = "https://zola-386.netlify.com"
+
+[author]
+name = "José Lopes"
+homepage = "https://github.com/lopes"

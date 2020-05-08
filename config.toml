@@ -1,0 +1,52 @@
+base_url = "http://zola-386.netlify.com"
+
+default_language = "en"
+title = "ZOLA.386"
+description = "ZOLA.386 is a port of the BOOTSTRA.386 theme."
+
+highlight_code = true
+compile_sass = true
+generate_rss = true
+build_search_index = true
+
+taxonomies = [
+  {name="categories", rss=true},
+  {name="tags", rss=true},
+]
+
+
+[extra]
+author = "José Lopes"
+year = "2020"
+
+keywords = "zola, theme, retro, hacking"
+theme_color = "#000084"
+zola386_menu = [
+  {path="/", name="Home"},
+  {path="categories", name="Categories"},
+  {path="tags", name="Tags"},
+  {path="about", name="About"},
+]
+
+# third party
+# google_analytics = "UA-012345-67"
+# disqus = "disqus-user"
+
+# social media
+image = ""
+twitter_user = "lopesoj"
+linkedin_user = "jlopesjr"
+github_user = "lopes"
+# gitlab_user = ""
+
+# i18n words
+label_tags = "Tags"
+label_tag = "Tag"
+label_categories = "Categories"
+label_category = "Category"
+label_author = "Author"
+label_date = "Date"
+label_taxonomy = "Taxonomy"
+label_reading = "Reading time"
+label_read_more = "Read more"
+label_welcome = "Welcome to "

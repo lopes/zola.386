@@ -1,0 +1,16 @@
+@import "../static/css/bootstrap";
+@import "../static/css/bootstrap-responsive";
+@import "../static/css/style";
+
+// fixing font path
+@font-face {
+    font-family: 'DOS';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./css/fonts/Fixedsys500c.eot');
+    src: local('☺'), url('./css/fonts/Fixedsys500c.woff') format('woff'), url('./css/fonts/Fixedsys500c.ttf') format('truetype'), url('./css/fonts/Fixedsys500c.svg') format('svg');
+}
+
+.navmargin {
+	margin-top: 40px;
+}

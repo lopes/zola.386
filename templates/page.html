@@ -1,0 +1,66 @@
+{% extends "index.html" %}
+
+{% block title %}{{ config.title}} - {{ page.title }}{% endblock title %}
+
+{% block ogtitle %}{{ config.title}} - {{ page.title }}{% endblock ogtitle %}
+{% block ogdesc %}{{ page.description }}{% endblock ogdesc %}
+{% if page.slug %}
+  {% block ogurl %}{{ config.base_url }}/{{ page.slug }}{% endblock ogurl %}
+{% endif %}
+{% if page.extra.image %}
+  {% block ogimg %}{{ page.extra.image }}{% endblock ogimg%}
+{% endif %}
+
+{% block breadcrumb %}
+<p class="lead">
+  <span>&gt;&gt;</span>
+  <a href="{{ config.base_url }}">Home</a>
+  <span class="divider">/</span>
+  <a class="category" href="{{ get_taxonomy_url(kind="categories", name=page.taxonomies.categories[0]) }}">
+    {{ page.taxonomies.categories[0] }}
+  </a>
+  <span class="divider">/</span>
+    {% for tag in page.taxonomies.tags %}
+      <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>{% if page.taxonomies.tags | length > 1 %}{% if loop.index != page.taxonomies.tags | length %},{% endif %}{% endif %}
+    {% endfor %}
+</p>
+{% endblock breadcrumb %}
+
+{% block header %}
+<div class="page-header">
+  <h1>{{ page.title }}</h1>
+</div>
+{% endblock header %}
+
+{% block meta %}
+<p class="text-right">
+  <span class="label label-success">
+    &becaus;
+    {% if page.extra.author %}
+      {{ page.extra.author }}
+    {% else %}
+      {{ config.extra.author }}
+    {% endif %}
+  </span>
+  <span class="label label-success">&there4; {{ page.date }}</span>
+  <span class="label label-success">&infin; {{ page.reading_time }}'</span>
+</p>
+{% endblock meta %}
+
+{% block main %}
+{{ page.content | safe }}
+{% if config.extra.disqus and page.extra.disqus %}
+<div id="disqus">
+  <div id="disqus_thread"></div>
+  <script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://{{config.extra.disqus}}.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                            
+</div>
+{% endif %}
+{% endblock main %}
