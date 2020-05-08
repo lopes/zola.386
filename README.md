@@ -40,6 +40,8 @@ taxonomies = [
 ]
 ```
 
+Remember that all descriptions (`config.description` and `page.description`) are shown on the index page, one at the header and the others through the body.
+
 ### Extras
 ZOLA.386 comes with a lot of extra variables which eases the creation and maintenance of the site, so it's important to review all of them after installing the theme.
 
@@ -54,10 +56,16 @@ zola386_menu = [
 ]
 ```
 
-ZOLA.386 is also prepared to deal with Google Analytics, Disqus, and Twitter --[Open Graph Protocol](https://ogp.me/) is welcome.  Under the `label_` variables, you can set names to better localize your site.  A theme to provide information for its owner and SEO-friendly.
+ZOLA.386 is also prepared to deal with Google Analytics, Disqus, and Twitter --[Open Graph Protocol](https://ogp.me/) is welcome.  This theme is prepared to use the output of [Favicon Generator](https://www.favicon-generator.org/), to do so, you'll just need to download the output of that site and extract in `static/images`. 
+
+As said, Disqus is supportted, but besides setting the username in `config.toml`, you also must to put a `disqus = true` extra option on the pages where Disqus will be enable --this gives you the freedom to enable or disable comments on certain posts.  You can use the extra option `image` on each page, to represent that post.
+
+Under the `label_` variables, you can set names to better localize your site.  A theme to provide information for its owner and SEO-friendly.
 
 ### Other files
 The `content\_index.md` file must be properly configured to provide better experience.  Check out this file for more information.
+
+The 404 page is almost hardcoded, so you must edit it directly.  
 
 
 ## License

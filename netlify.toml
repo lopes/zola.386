@@ -1,0 +1,12 @@
+# based on:
+# https://www.getzola.org/documentation/deployment/netlify/
+
+[build]
+publish = "public"
+command = "zola build"
+
+[build.environment]
+ZOLA_VERSION = "0.10.1"
+
+[context.deploy-preview]
+command = "zola build --base-url $DEPLOY_PRIME_URL"
