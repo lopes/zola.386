@@ -1,4 +1,4 @@
-base_url = "http://zola-386.netlify.com"
+base_url = "https://zola386.netlify.app"
 
 default_language = "en"
 title = "ZOLA.386"

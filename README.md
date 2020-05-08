@@ -2,6 +2,8 @@
 
 ![ZOLA.386 screenshot](https://github.com/lopes/zola.386/blob/master/screenshot.png?raw=true)
 
+## [Live demo]()
+
 ZOLA.386 is a port of the BOOTSTRA.386 theme and was based on:
 
 - [BOOTSTRA.386](https://kristopolous.github.io/BOOTSTRA.386/): main idea, design.
@@ -60,7 +62,7 @@ ZOLA.386 is also prepared to deal with Google Analytics, Disqus, and Twitter --[
 
 As said, Disqus is supportted, but besides setting the username in `config.toml`, you also must to put a `disqus = true` extra option on the pages where Disqus will be enable --this gives you the freedom to enable or disable comments on certain posts.  You can use the extra option `image` on each page, to represent that post.
 
-Under the `label_` variables, you can set names to better localize your site.  A theme to provide information for its owner and SEO-friendly.
+Under the `label_` variables, you can set names to better localize your site.  Note that you can change the language of a single page, by using `page.extra.lang`, which causes `<html lang="">` to change only on that page.  A theme to provide information for its owner and SEO-friendly.
 
 ### Other files
 The `content\_index.md` file must be properly configured to provide better experience.  Check out this file for more information.
@@ -70,3 +72,6 @@ The 404 page is almost hardcoded, so you must edit it directly.
 
 ## License
 This theme is released under the MIT license.  For more information read the [License](https://github.com/lopes/zola.386/blob/master/LICENSE).
+
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5d6f1986-7bf3-40d3-b298-3339288585d4/deploy-status)](https://app.netlify.com/sites/zola386/deploys)
