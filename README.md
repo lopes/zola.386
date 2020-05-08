@@ -2,7 +2,7 @@
 
 ![ZOLA.386 screenshot](https://github.com/lopes/zola.386/blob/master/screenshot.png?raw=true)
 
-## [Live demo]()
+## [Live demo](https://zola386.netlify.app/)
 
 ZOLA.386 is a port of the BOOTSTRA.386 theme and was based on:
 
@@ -58,9 +58,16 @@ zola386_menu = [
 ]
 ```
 
+### Social
 ZOLA.386 is also prepared to deal with Google Analytics, Disqus, and Twitter --[Open Graph Protocol](https://ogp.me/) is welcome.  This theme is prepared to use the output of [Favicon Generator](https://www.favicon-generator.org/), to do so, you'll just need to download the output of that site and extract in `static/images`. 
 
 As said, Disqus is supportted, but besides setting the username in `config.toml`, you also must to put a `disqus = true` extra option on the pages where Disqus will be enable --this gives you the freedom to enable or disable comments on certain posts.  You can use the extra option `image` on each page, to represent that post.
+
+### Animations
+All JavaScript animations can be set at `static/js/zola386.js`.  Basically you can disable all animations, use one or two scans, and change the scan speed.  Personally, I prefer only one scan with a speed factor of 5.
+
+
+### Language
 
 Under the `label_` variables, you can set names to better localize your site.  Note that you can change the language of a single page, by using `page.extra.lang`, which causes `<html lang="">` to change only on that page.  A theme to provide information for its owner and SEO-friendly.
 
