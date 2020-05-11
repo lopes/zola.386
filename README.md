@@ -25,7 +25,7 @@ Of course you can install it just as another theme for your site, but ZOLA.386 m
 
 ```bash
 $ cd themes
-$ git clone https://github.com/lopes/zola.386.git
+$ git submodule add https://github.com/lopes/zola.386 
 ```
 
 

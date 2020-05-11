@@ -29,18 +29,18 @@ zola386_menu = [
   {path="about", name="About"},
 ]
 
-# third party
+### THIRD PARTY
 # google_analytics = "UA-012345-67"
 # disqus = "disqus-user"
 
-# social media
+### SOCIAL MEDIA
 # image = ""
 twitter_user = "lopesoj"
 linkedin_user = "jlopesjr"
 github_user = "lopes"
 # gitlab_user = ""
 
-# i18n words
+### I18N WORDS
 label_tags = "Tags"
 label_tag = "Tag"
 label_categories = "Categories"
