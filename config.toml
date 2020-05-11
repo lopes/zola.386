@@ -2,7 +2,7 @@ base_url = "https://zola386.netlify.app"
 
 default_language = "en"
 title = "ZOLA.386"
-description = "ZOLA.386 is a port of the BOOTSTRA.386 theme."
+description = "A port of the BOOTSTRA.386 theme."
 
 highlight_code = true
 compile_sass = true
@@ -22,7 +22,7 @@ year = "2020"
 keywords = "zola, theme, retro, hacking"
 theme_color = "#000084"
 zola386_menu = [
-  {path="/", name="Home"},
+  {path="", name="Home"},
   {path="categories", name="Categories"},
   {path="tags", name="Tags"},
   {path="about", name="About"},

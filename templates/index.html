@@ -42,7 +42,9 @@
   <meta property="og:description" content="{% block ogdesc %}{{ config.description }}{% endblock ogdesc %}">
   <meta property="og:url" content="{% block ogurl %}{{ config.base_url }}{% endblock ogurl%}">
   <meta property="og:site_name" content="{{ config.title }}">
+  {% if config.extra.image %}
   <meta property="og:image" content="{% block ogimg %}{{ config.extra.image }}{% endblock ogimg %}">
+  {% endif %}
   <meta name="twitter:card" content="summary">
   {% if config.extra.twitter_user %}
   <meta name="twitter:site" content="{{ config.extra.twitter_user }}">
@@ -87,7 +89,7 @@
       {% block breadcrumb %}{% endblock breadcrumb %}
       {% block header %}
       <div class="page-header">
-        <h1>{{ config.extra.label_welcome}}{{ config.title }}</h1>
+        <h1>{{ config.title }} <small>{{ config.description }}</small></h1>
       </div>
       {% endblock header %}
       {% block meta %}{% endblock meta %}
@@ -97,8 +99,6 @@
 
       <div class="span9 bs-docs-sidebar">
       {% block main %}
-        <p class="lead">{{ config.description }}</p>
-
         {% for page in paginator.pages %}
           {{ macro::post_max(page=page) }}
         {% endfor %}

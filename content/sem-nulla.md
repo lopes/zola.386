@@ -10,7 +10,7 @@ categories = ["laoreet"]
 tags = ["risus", "platea", "nunc"]
 
 [extra]
-disqus = true
+comments = true
 +++
 
 Sem nulla pharetra diam sit amet nisl suscipit. Quis blandit turpis cursus in hac habitasse platea dictumst. Id diam vel quam elementum pulvinar. Fermentum dui faucibus in ornare quam. Libero justo laoreet sit amet cursus sit amet dictum sit. Lacus luctus accumsan tortor posuere. Turpis egestas maecenas pharetra convallis posuere morbi leo. At varius vel pharetra vel turpis nunc eget lorem dolor. Tristique senectus et netus et. In hac habitasse platea dictumst vestibulum rhoncus. Gravida rutrum quisque non tellus orci ac. Nulla facilisi morbi tempus iaculis urna id volutpat. Porta lorem mollis aliquam ut porttitor leo. Dictum sit amet justo donec enim diam vulputate. Dapibus ultrices in iaculis nunc sed augue lacus. Mattis pellentesque id nibh tortor id aliquet. Quisque egestas diam in arcu cursus euismod quis viverra. Laoreet non curabitur gravida arcu. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Ut venenatis tellus in metus.

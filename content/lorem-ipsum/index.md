@@ -10,7 +10,7 @@ categories = ["pellentesque"]
 tags = ["hac", "velit", "risus"]
 
 [extra]
-disqus = true
+comments = true
 lang = "br"
 +++
 

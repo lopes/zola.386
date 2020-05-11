@@ -15,14 +15,14 @@
 <p class="lead">
   <span>&gt;&gt;</span>
   <a href="{{ config.base_url }}">Home</a>
-  <span class="divider">/</span>
-  <a class="category" href="{{ get_taxonomy_url(kind="categories", name=page.taxonomies.categories[0]) }}">
-    {{ page.taxonomies.categories[0] }}
-  </a>
-  <span class="divider">/</span>
-    {% for tag in page.taxonomies.tags %}
-      <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>{% if page.taxonomies.tags | length > 1 %}{% if loop.index != page.taxonomies.tags | length %},{% endif %}{% endif %}
-    {% endfor %}
+  {% if page.taxonomies %}
+    <span class="divider">/</span>
+    <a class="category" href="{{ get_taxonomy_url(kind="categories", name=page.taxonomies.categories[0]) }}">{{ page.taxonomies.categories[0] }}</a>
+    <span class="divider">/</span>
+      {% for tag in page.taxonomies.tags %}
+        <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>{% if page.taxonomies.tags | length > 1 %}{% if loop.index != page.taxonomies.tags | length %},{% endif %}{% endif %}
+      {% endfor %}
+  {% endif %}
 </p>
 {% endblock breadcrumb %}
 
@@ -49,7 +49,7 @@
 
 {% block main %}
 {{ page.content | safe }}
-{% if config.extra.disqus and page.extra.disqus %}
+{% if config.extra.disqus and page.extra.comments %}
 <div id="disqus">
   <div id="disqus_thread"></div>
   <script>
