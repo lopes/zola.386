@@ -1,4 +1,5 @@
 base_url = "https://zola386.netlify.app"
+# theme = "zola.386"
 
 default_language = "en"
 title = "ZOLA.386"
@@ -33,7 +34,7 @@ zola386_menu = [
 # disqus = "disqus-user"
 
 # social media
-image = ""
+# image = ""
 twitter_user = "lopesoj"
 linkedin_user = "jlopesjr"
 github_user = "lopes"
@@ -49,4 +50,3 @@ label_date = "Date"
 label_taxonomy = "Taxonomy"
 label_reading = "Reading time"
 label_read_more = "Read more"
-label_welcome = "Welcome to "

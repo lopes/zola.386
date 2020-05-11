@@ -66,10 +66,11 @@ As said, Disqus is supportted, but besides setting the username in `config.toml`
 ### Animations
 All JavaScript animations can be set at `static/js/zola386.js`.  Basically you can disable all animations, use one or two scans, and change the scan speed.  Personally, I prefer only one scan with a speed factor of 5.
 
-
 ### Language
-
 Under the `label_` variables, you can set names to better localize your site.  Note that you can change the language of a single page, by using `page.extra.lang`, which causes `<html lang="">` to change only on that page.  A theme to provide information for its owner and SEO-friendly.
+
+### Search
+Search was implemented according to the [official documentation](https://www.getzola.org/documentation/content/search/).  It uses JavaScript to search on an indexed version of the site based on `search_index.LANG.js`, `elasticlunr.min.js`, and `search.js` --the first two are generated after each build.  If you're running your site in other default language other than English, you **must** change the `search_index.LANG.js` line in `index.html`, setting up `LANG` accordingly.
 
 ### Other files
 The `content\_index.md` file must be properly configured to provide better experience.  Check out this file for more information.

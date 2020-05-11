@@ -109,6 +109,14 @@
 
       <div class="span3 bs-docs-sidebar">
       {% block sidebar %}
+        <h1>Search</h1>
+        <form class="form-search">
+          <input id="search" type="text" class="input-large search-query">
+        </form>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+        <p></p>
         <h1>Categories</h1>
         <ul class="nav nav-list bs-docs-sidenav">
           {% set categories = get_taxonomy(kind="categories") %}
@@ -169,5 +177,8 @@
   <script src="{{ get_url(path="js/bootstrap-typeahead.js", trailing_slash=false) | safe }}"></script>
   <script src="{{ get_url(path="js/bootstrap-affix.js", trailing_slash=false) | safe }}"></script>
   <script src="{{ get_url(path="js/zola.386.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="js/search.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="elasticlunr.min.js", trailing_slash=false) | safe }}"></script>
+  <script src="{{ get_url(path="search_index.en.js", trailing_slash=false) | safe }}"></script>
 </body>
 </html>
