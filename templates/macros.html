@@ -15,6 +15,7 @@
       {% endif %}
     </dd>
 
+    {% if page.taxonomies.categories %}
     <dt>{{ config.extra.label_taxonomy }}</dt>
     <dd>
       <a href="{{ get_taxonomy_url(kind="categories", name=page.taxonomies.categories[0]) }}">
@@ -26,6 +27,7 @@
       {% endfor %}
     </a>
     </dd>
+    {% endif %}
 
     <dt>{{ config.extra.label_reading }}</dt>
     <dd>{{ page.reading_time }}'</dd>
