@@ -38,6 +38,7 @@ Posuere urna nec tincidunt praesent semper. Viverra mauris in aliquam sem fringi
 Tristique risus `nec feugiat in fermentum` posuere. Consequat nisl vel pretium lectus
 
 ![quam id.](crt-phosphor-dots.png)
+{{ resize_image(path="lorem-ipsum/crt-phosphor-dots.png", width=400, caption="Figure 1.") }}
 
 ```python
 class ECB(object):
