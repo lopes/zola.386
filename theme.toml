@@ -2,7 +2,7 @@ name = "zola.386"
 description = "Zola port of the BOOTSTRA.386 theme."
 license = "MIT"
 homepage = "https://github.com/lopes/zola.386"
-min_version = "0.2.0"
+min_version = "0.2.1"
 demo = "https://zola-386.netlify.com"
 
 [author]

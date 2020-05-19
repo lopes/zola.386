@@ -4,12 +4,9 @@
 
 {% block ogtitle %}{{ config.title}} - {{ page.title }}{% endblock ogtitle %}
 {% block ogdesc %}{{ page.description }}{% endblock ogdesc %}
-{% if page.slug %}
-  {% block ogurl %}{{ config.base_url }}/{{ page.slug }}{% endblock ogurl %}
-{% endif %}
-{% if page.extra.image %}
-  {% block ogimg %}{{ page.extra.image }}{% endblock ogimg%}
-{% endif %}
+{% block ogurl %}{% if page.slug %}{{ config.base_url }}/{{ page.slug }}{% endif %}{% endblock ogurl %}
+{% block ogimg %}{% if page.extra.image %}{{ page.extra.image }}{% endif %}{% endblock ogimg %}
+
 
 {% block breadcrumb %}
 <p class="lead">

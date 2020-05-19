@@ -34,7 +34,7 @@ zola386_menu = [
 # disqus = "disqus-user"
 
 ### SOCIAL MEDIA
-# image = ""
+image = "https://raw.githubusercontent.com/lopes/zola.386/master/screenshot.png"
 twitter_user = "lopesoj"
 linkedin_user = "jlopesjr"
 github_user = "lopes"
