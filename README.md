@@ -14,7 +14,7 @@ ZOLA.386 is a port of the BOOTSTRA.386 theme and was based on:
 ZOLA.386 is a theme that refers to the 90s, but with cutting edge features to be fast and responsive.
 
 
-## Instalation
+## Installation
 The easiest way to install ZOLA.386 is to clone this repository and build your site upon it:
 
 ```bash
