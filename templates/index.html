@@ -1,7 +1,7 @@
 {% import "macros.html" as macro %}
 
 <!DOCTYPE html>
-<html lang="{% if page.extra.lang %}{{ page.extra.lang }}{% else %}{{ config.default_language }}{% endif %}" itemscope itemtype="http://schema.org/Blog">
+<html lang="{% if page.extra.lang %}{{ page.extra.lang }}{% else %}{{ lang }}{% endif %}" itemscope itemtype="http://schema.org/Blog">
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
