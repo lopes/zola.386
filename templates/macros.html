@@ -21,10 +21,12 @@
       <a href="{{ get_taxonomy_url(kind="categories", name=page.taxonomies.categories[0]) }}">
         {{ page.taxonomies.categories[0] }}
       </a>
+      {% if page.taxonomies.tags %}
       |
       {% for tag in page.taxonomies.tags %}
         <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>{% if page.taxonomies.tags | length > 1 %}{% if loop.index != page.taxonomies.tags | length %},{% endif %}{% endif %}
       {% endfor %}
+      {% endif %}
     </a>
     </dd>
     {% endif %}

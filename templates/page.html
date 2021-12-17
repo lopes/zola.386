@@ -14,11 +14,15 @@
   <a href="{{ config.base_url }}">Home</a>
   {% if page.taxonomies %}
     <span class="divider">/</span>
+    {% if page.taxonomies.categories %}
     <a class="category" href="{{ get_taxonomy_url(kind="categories", name=page.taxonomies.categories[0]) }}">{{ page.taxonomies.categories[0] }}</a>
+    {% endif %}
+    {% if page.taxonomies.tags %}
     <span class="divider">/</span>
       {% for tag in page.taxonomies.tags %}
         <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>{% if page.taxonomies.tags | length > 1 %}{% if loop.index != page.taxonomies.tags | length %},{% endif %}{% endif %}
       {% endfor %}
+    {% endif %}
   {% endif %}
 </p>
 {% endblock breadcrumb %}
@@ -57,7 +61,7 @@
     (d.head || d.body).appendChild(s);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                            
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 {% endif %}
 {% endblock main %}
