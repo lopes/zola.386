@@ -143,7 +143,9 @@
     <p>
         {{ config.extra.year }} &copy;
         <a href="{{ config.base_url }}">{{ config.extra.author }}</a>
+        {% if config.extra.twitter_user or config.extra.linkedin_user or config.extra.github_user or config.extra.gitlab_user %}
         |
+        {% endif %}
         {% if config.extra.twitter_user %}
         <a href="https://twitter.com/{{ config.extra.twitter_user }}" target="_blank">Twitter</a>
         {% endif %}
