@@ -121,7 +121,7 @@
         <ul class="nav nav-list bs-docs-sidenav">
           {% set categories = get_taxonomy(kind="categories") %}
           {% for cat in categories.items %}
-            <li><a href="{{ config.base_url }}/categories/{{ cat.name }}">{{ cat.name }}</a></li>
+            <li><a href="{{ get_taxonomy_url(kind="categories", name=cat.name) }}">{{ cat.name }}</a></li>
           {% endfor %}
         </ul>
         <p></p>
@@ -129,7 +129,7 @@
         <ul class="nav nav-list bs-docs-sidenav">        
           {% set tags = get_taxonomy(kind="tags") %}
           {% for tag in tags.items %}
-            <li><a href="{{ config.base_url }}/tags/{{ tag.name }}">{{ tag.name }}</a></li>
+            <li><a href="{{ get_taxonomy_url(kind="tags", name=tag.name) }}">{{ tag.name }}</a></li>
           {% endfor %}    
         </ul>
       {% endblock sidebar %}
