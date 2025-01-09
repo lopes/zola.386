@@ -1,0 +1,3 @@
+[submodule "themes/zola.386"]
+	path = themes/zola.386
+	url = https://github.com/lopes/zola.386
