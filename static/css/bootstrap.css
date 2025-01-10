@@ -234,19 +234,19 @@ body {
   font-family: DOS, Monaco, Menlo, Consolas, "Courier New", monospace;
   font-size: 18px;
   line-height: 20px;
-  color: #bbbbbb;
-  background-color: #000084;
+  color: #0f0;
+  background-color: #000;
 }
 
 a {
-  color: #fefe54;
+  color: #0ff;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #fefe54;
-  background: #aa5500;
+  color: #000;
+  background: #0f0;
 }
 
 .img-rounded {
@@ -782,7 +782,7 @@ h5 small,
 h6 small {
   font-weight: normal;
   line-height: 1;
-  color: #bbbbbb;
+  color: #f00;
 }
 
 h1,
@@ -846,7 +846,7 @@ h4 small {
 .page-header {
   padding: 20px 20px;
   margin: 20px 0 20px;
-  background: #00aaaa;
+  background: #0f0;
 }
 
 .page-header h1 {
@@ -973,7 +973,7 @@ blockquote p {
 blockquote small {
   display: block;
   line-height: 20px;
-  color: #bbbbbb;
+  color: #222;
 }
 
 blockquote small:before {
@@ -1093,7 +1093,7 @@ legend {
 
 legend small {
   font-size: 20px;
-  color: #bbbbbb;
+  color: #222;
 }
 
 legend:before {

@@ -33,8 +33,10 @@
 </div>
 {% endblock header %}
 
+
 {% block meta %}
 <p class="text-right">
+  <!--
   <span class="label label-success">
     &becaus;
     {% if page.extra.author %}
@@ -45,8 +47,10 @@
   </span>
   <span class="label label-success">&there4; {{ page.date }}</span>
   <span class="label label-success">&infin; {{ page.reading_time }}'</span>
+  -->
 </p>
 {% endblock meta %}
+
 
 {% block main %}
 {{ page.content | safe }}

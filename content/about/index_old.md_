@@ -1,21 +1,13 @@
 +++
-title = "Lorem Ipsum"
-description = "dolor sit amet, consectetur"
-date = 2020-05-01
+title = "What is Gordian Labs?"
+description = "A little background on Gordian Labs"
+date = 2025-01-07
 draft = false
-slug = "lorem-ipsum"
+slug = "about"
 
-[taxonomies]
-categories = ["pellentesque"]
-tags = ["hac", "velit", "risus"]
-
-[extra]
-comments = true
-lang = "pt"
-image = "https://zola386.netlify.app/lorem-ipsum/crt-phosphor-dots.png"
 +++
 
-Posuere urna nec tincidunt praesent semper. Viverra mauris in aliquam sem fringilla ut morbi tincidunt. Mattis rhoncus urna neque viverra justo nec ultrices dui. Nulla pellentesque dignissim enim sit. Arcu ac tortor dignissim convallis aenean et.
+Here is where I say something about what Gordian Labs is. 
 
 # Lorem ipsum
 ## dolor sit amet

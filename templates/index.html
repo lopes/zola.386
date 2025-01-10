@@ -83,7 +83,7 @@
         </div>
     </div>
   </nav>
-
+  
   <div class="container navmargin">
     <header class="jumbotron subhead" id="overview">
       {% block breadcrumb %}{% endblock breadcrumb %}
@@ -96,17 +96,24 @@
     </header>
     
     <div class="row-fluid">
-
+      
       <div class="span9 bs-docs-sidebar">
       {% block main %}
+        <p>Hello there, and welcome to Gordian Labs.</p>
+        <p>Yeah, we like the retro 386 look. Hope you enjoy it too.</p>
+        <hr /><br/>
+        <p>
         {% for page in paginator.pages %}
           {{ macro::post_max(page=page) }}
         {% endfor %}
 
         {{ macro::paginator(ref=paginator, extra=config.extra) }}
+        </p>
+
       {% endblock main %}
       </div> <!-- span9 -->
 
+      <!--
       <div class="span3 bs-docs-sidebar">
       {% block sidebar %}
         <h1>Search</h1>
@@ -134,8 +141,9 @@
         </ul>
       {% endblock sidebar %}
       </div>
-
+      -->
     </div> <!-- row -->
+    <div><br /></div>
   </div> <!-- container navmargin -->
 
   <footer class="container">
@@ -152,12 +160,14 @@
         {% if config.extra.linkedin_user %}
         <a href="https://linkedin.com/in/{{ config.extra.linkedin_user }}" target="_blank">Linkedin</a>
         {% endif %}
+        <!--
         {% if config.extra.github_user %}
         <a href="https://github.com/{{ config.extra.github_user }}" target="_blank">GitHub</a>
         {% endif %}
         {% if config.extra.gitlab_user %}
         <a href="https://gitlab.com/{{ config.extra.gitlab_user }}" target="_blank">GitLab</a>
         {% endif %}
+        -->
         |
         Built on <a href="https://getzola.org" target="_blank">Zola</a>
     </p>

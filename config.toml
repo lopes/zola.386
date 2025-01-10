@@ -1,13 +1,12 @@
-base_url = "https://zola386.netlify.app"
+base_url = "https://www.gordianlabs.com"
 # theme = "zola.386"
 
 default_language = "en"
-title = "ZOLA.386"
-description = "A port of the BOOTSTRA.386 theme."
+title = "Gordian Labs"
+description = "Technology Advisory, Seed Investing"
 
-highlight_code = true
 compile_sass = true
-generate_rss = true
+# generate_rss = true
 build_search_index = true
 
 taxonomies = [
@@ -15,18 +14,21 @@ taxonomies = [
   {name="tags", rss=true},
 ]
 
+[markdown]
+highlight_code = true
 
 [extra]
-author = "José Lopes"
-year = "2020"
+author = "Gordian Labs"
+year = "2025"
 
 keywords = "zola, theme, retro, hacking"
 theme_color = "#000084"
 zola386_menu = [
   {path="", name="Home"},
-  {path="categories", name="Categories"},
-  {path="tags", name="Tags"},
   {path="about", name="About"},
+  {path="history", name="History"},
+  {path="contact", name="Contact"},
+#  {path="blog", name="Blog"},
 ]
 
 ### THIRD PARTY
@@ -35,9 +37,9 @@ zola386_menu = [
 
 ### SOCIAL MEDIA
 image = "https://raw.githubusercontent.com/lopes/zola.386/master/screenshot.png"
-twitter_user = "lopesoj"
-linkedin_user = "jlopesjr"
-github_user = "lopes"
+twitter_user = "uqbar_"
+linkedin_user = "hrishi-dixit"
+github_user = "uqbar"
 # gitlab_user = ""
 
 ### I18N WORDS
@@ -46,7 +48,7 @@ label_tag = "Tag"
 label_categories = "Categories"
 label_category = "Category"
 label_author = "Author"
-label_date = "Date"
+label_date = "Last update"
 label_taxonomy = "Taxonomy"
 label_reading = "Reading time"
 label_read_more = "Read more"
