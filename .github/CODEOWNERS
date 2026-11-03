@@ -1,0 +1,13 @@
+# Global default code owners
+* @lopes
+
+# Zola Theme Templates, Styles & Static Assets
+/templates/ @lopes
+/sass/ @lopes
+/static/ @lopes
+/content/ @lopes
+/config.toml @lopes
+/theme.toml @lopes
+
+# CI/CD Workflows & Repository Governance
+/.github/ @lopes
