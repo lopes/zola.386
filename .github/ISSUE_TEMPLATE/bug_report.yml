@@ -1,0 +1,49 @@
+name: Bug Report
+description: "Report a template rendering error, CSS layout glitch, or Zola version incompatibility"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report a defect, regression, or unexpected behavior in zola.386.
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Affected Subsystem
+      options:
+        - "Tera Templates (`templates/`)"
+        - "Sass / CSS Styling (`sass/`)"
+        - "JavaScript & Boot Animation (`static/`)"
+        - "Theme Configuration (`config.toml`, `theme.toml`)"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description of the Bug
+      description: Clear and concise description of what is broken.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Exact commands, inputs, or steps that trigger the issue.
+      placeholder: |
+        1. Run `zola build` or `zola serve`
+        2. Observe error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Terminal Output / Error Logs
+      description: Paste relevant terminal output or stack trace here.
+      render: shell

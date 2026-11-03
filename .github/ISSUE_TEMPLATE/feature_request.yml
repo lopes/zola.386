@@ -1,0 +1,29 @@
+name: Feature / Enhancement
+description: "Propose a theme feature, shortcode, or compatibility update for zola.386"
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What gap, limitation, or operational friction exists today, and why does solving it matter?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: "Background, target Zola version, affected templates/styles (`templates/`, `sass/`), and retro aesthetic constraints."
+    validations:
+      required: true
+  - type: textarea
+    id: dod
+    attributes:
+      label: Definition of Done
+      description: Concrete deliverables, invariants, and verification criteria required to close this issue.
+      value: |
+        - [ ] `zola build` passes cleanly with demo content
+        - [ ] Theme options documented in `config.toml` and `README.md`
+        - [ ] Zero external CDN trackers or bloated assets introduced
+    validations:
+      required: true
